@@ -21,7 +21,12 @@ import './commands'
 
 import { mount } from 'cypress/react' // Use this instead of cypress/react18
 
+// Augment the Cypress namespace to include the mount command
+// @ts-ignore
+Cypress.Chainable.prototype.mount = mount;
+
 // Add any global component configuration
+// @ts-ignore
 Cypress.Commands.add('mount', mount)
 
 // Example use:
