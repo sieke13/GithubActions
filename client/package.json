@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "cypress:run": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "start": "vite"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
