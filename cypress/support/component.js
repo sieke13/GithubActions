@@ -19,8 +19,9 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-import { mount } from 'cypress/react18'
+import { mount } from 'cypress/react' // Use this instead of cypress/react18
 
+// Add any global component configuration
 Cypress.Commands.add('mount', mount)
 
 // Example use:

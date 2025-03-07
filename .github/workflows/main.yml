@@ -35,8 +35,8 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Start server and run Cypress tests
-        run: npx start-server-and-test start:server http://localhost:3001 "npm run test-component"
+      - name: Start server and run Cypress E2E tests
+        run: npx start-server-and-test start:server http://localhost:3001 "npx cypress run"
         env:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/techquiz
