@@ -35,13 +35,12 @@ jobs:
       - name: 🧰 Install Deps
         run: npm install
 
-
       # Run build
       - name: Run Build
-        run: npm run build --prefix server
+        run: npm run build
 
       # Start the server and run Cypress tests
-      - name: Run Cypress Tests
+      - name: Start Server and Run Cypress Tests
         run: npm run cypress:run
         env:
           CI: true

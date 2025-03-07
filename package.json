@@ -13,7 +13,8 @@
     "test": "concurrently \"cd server && npm run test\" \"cd client && npm run test\"",
     "test-component": "npx cypress run --component",
     "test-gui": "npx cypress open",
-    "cypress:run": "start-server-and-test start http://localhost:3001 cypress run"
+    "start:server": "cd server && npm run start",
+    "cypress:run": "start-server-and-test start:server http://localhost:3001 cypress run"
   },
   "keywords": [],
   "author": "",
