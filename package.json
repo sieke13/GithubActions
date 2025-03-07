@@ -2,23 +2,25 @@
   "name": "coding-quiz",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "cd server && npm run start",
+    "start": "concurrently \"cd server && npm run start\" \"cd client && npm run start\"",
     "seed": "cd server && npm run seed",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
     "render-build": "npm install && npm run build",
-    "test": "npx cypress run --browser electron",
+    "test": "concurrently \"cd server && npm run test\" \"cd client && npm run test\"",
     "test-component": "npx cypress run --component",
-    "test-gui": "npx cypress open"
+    "test-gui": "npx cypress open",
+    "cypress:run": "start-server-and-test start http://localhost:3001 cypress run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.0",
-    "cypress": "^13.17.0",
+    "cypress": "^9.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "ts-node": "^10.9.2",
@@ -26,6 +28,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.3",
+    "start-server-and-test": "^1.12.5"
   }
 }
