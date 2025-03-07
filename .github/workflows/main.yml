@@ -1,18 +1,21 @@
 # Name of workflow
-name: Cypress and Test Workflow
+name: CI
 
-# Trigger workflow on all pull requests
-on:
-  pull_request:
-    branches:
-      - main
-      - develop
+# Trigger workflow on push and pull requests
+on: [push, pull_request]
 
 # Jobs to carry out
 jobs:
-  test:
+  build-and-test:
     # Operating system to run job on
     runs-on: ubuntu-latest
+    
+    services:
+      # Add MongoDB service
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
 
     # Steps in job
     steps:
@@ -21,22 +24,18 @@ jobs:
         uses: actions/checkout@v3
 
       # Set up Node.js
-      - name: Use Node.js 21.x
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 21.x
+          node-version: '20'
 
       # Install dependencies
-      - name: 🧰 Install Deps
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      # Install server dependencies
-      - name: Install server dependencies
-        run: npm install --prefix server
-
-      # Build server
-      - name: Build server
-        run: npm run build --prefix server
+      # Build the app
+      - name: Build the app
+        run: npm run build
 
       # Start the server in the background
       - name: Start server
@@ -50,8 +49,4 @@ jobs:
 
       # Run Cypress tests
       - name: Run Cypress tests
-        run: npm run test
-
-      # Run build
-      - name: Run Build
-        run: npm run build
+        run: npm run cypress:run
