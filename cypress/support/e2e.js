@@ -1,4 +1,3 @@
-
 // ***********************************************************
 // This example support/e2e.js is processed and
 // loaded automatically before your test files.
@@ -15,16 +14,13 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands';
+import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// Configure global behavior
+// Prevent tests from failing on uncaught exceptions in the app
 Cypress.on('uncaught:exception', (_err, _runnable) => {
-  // returning false here prevents Cypress from failing the test
-  // when uncaught exceptions happen in the application
-  // this is useful during testing early development or third-party scripts
-  return false;
-});
+  return false
+})
 
