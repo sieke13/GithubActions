@@ -1,5 +1,5 @@
 
-# Cypress New1 Test
+# Cypress New2 Test
 
 ![License](https://badgen.net/badge/license/MIT/blue)
 
