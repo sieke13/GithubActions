@@ -1,10 +1,12 @@
 # Name of workflow
-name: Test workflow
+name: Test PR
 
 # Trigger workflow on all push events to the main branch
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [develop]
 
 # Jobs to carry out
 jobs:
@@ -21,19 +23,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 21.x
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 21.x
+          cache: 'npm'
 
-      - name: 🧰 Install Deps
+      - name: Install dependencies
         run: npm install
 
-      - name: Run Build
+      - name: Build application
         run: npm run build
 
-      - name: Start Server and Run Cypress Tests
-        run: npx start-server-and-test "npm run start" http://localhost:3001 "cypress run"
+      - name: Run Cypress component tests
+        run: npm run test-component
         env:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/techquiz
