@@ -1,5 +1,5 @@
 # Name of workflow
-name: Lint and Test workflow
+name: Test workflow
 
 # Trigger workflow on all push events to the main branch
 on:
@@ -38,7 +38,7 @@ jobs:
 
       # Run build
       - name: Run Build
-        run: npm run build
+        run: npm run build --prefix server
 
       # Start the server and run Cypress tests
       - name: Run Cypress Tests

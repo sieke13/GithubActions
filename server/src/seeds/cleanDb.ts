@@ -1,16 +1,30 @@
 import models from '../models/index.js';
 import db from '../config/connection.js';
 
-export default async (modelName: "Question", collectionName: string) => {
-  try {
-    let modelExists = await models[modelName].db.db.listCollections({
-      name: collectionName
-    }).toArray()
+export default async (modelName, collectionName) => {
+    try {
+        // Verifica si el modelo existe
+        if (!models[modelName]) {
+            throw new Error(`Model "${modelName}" does not exist.`);
+        }
 
-    if (modelExists.length) {
-      await db.dropCollection(collectionName);
+        // Verifica si la conexión a la base de datos está abierta
+        if (!db || !db.db) {
+            throw new Error('Database connection is not established.');
+        }
+
+        // Verifica si la colección existe
+        const collections = await db.db.listCollections({ name: collectionName }).toArray();
+
+        if (collections.length > 0) {
+            // Si la colección existe, la elimina
+            await db.dropCollection(collectionName);
+            console.log(`Collection "${collectionName}" dropped successfully.`);
+        } else {
+            console.log(`Collection "${collectionName}" does not exist.`);
+        }
+    } catch (err) {
+        console.error(`Error cleaning collection "${collectionName}":`, err);
+        throw err; // Relanza el error para que pueda ser manejado en un nivel superior
     }
-  } catch (err) {
-    throw err;
-  }
-}
+};
