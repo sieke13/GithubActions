@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Use Node.js 21.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 21.x
 
@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Start Server and Run Cypress Tests
-        run: npx start-server-and-test "npm run start" http://localhost:3001 "npm run cypress:run"
+        run: npx start-server-and-test "npm run start" http://localhost:3001 "cypress run"
         env:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/techquiz
