@@ -41,7 +41,7 @@ jobs:
 
       # Start the server and run Cypress tests
       - name: Start Server and Run Cypress Tests
-        run: npm run cypress:run
+        run: npx start-server-and-test start http://localhost:3001 cypress:run
         env:
           CI: true
           MONGODB_URI: mongodb://localhost:27017/techquiz
