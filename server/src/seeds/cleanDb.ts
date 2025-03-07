@@ -1,11 +1,5 @@
 import models from '../models/index.js';
 import db from '../config/connection.js';
-import { Model } from 'mongoose';
-
-interface Models {
-  [key: string]: Model<any>;
-  Question: Model<any>;
-}
 
 export default async (modelName: string, collectionName: string) => {
     try {

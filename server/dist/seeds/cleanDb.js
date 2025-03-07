@@ -3,7 +3,7 @@ import db from '../config/connection.js';
 export default async (modelName, collectionName) => {
     try {
         // Verifica si el modelo existe
-        if (!models[modelName]) {
+        if (!(modelName in models)) {
             throw new Error(`Model "${modelName}" does not exist.`);
         }
         // Verifica si la conexión a la base de datos está abierta
