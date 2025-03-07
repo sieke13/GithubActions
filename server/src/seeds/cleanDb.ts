@@ -1,10 +1,16 @@
 import models from '../models/index.js';
 import db from '../config/connection.js';
+import { Model } from 'mongoose';
 
-export default async (modelName, collectionName) => {
+interface Models {
+  [key: string]: Model<any>;
+  Question: Model<any>;
+}
+
+export default async (modelName: string, collectionName: string) => {
     try {
         // Verifica si el modelo existe
-        if (!models[modelName]) {
+        if (!(modelName in models)) {
             throw new Error(`Model "${modelName}" does not exist.`);
         }
 
