@@ -14,7 +14,7 @@
     "test-component": "npx cypress run --component",
     "test-gui": "npx cypress open",
     "start:server": "cd server && npm run start",
-    "cypress:run": "start-server-and-test start:server http://localhost:3001 cypress run"
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,5 @@
 # Name of workflow
-name: Test workflow doesnt work
+name: Test workflow
 
 # Trigger workflow on all push events to the main branch
 on:
