@@ -3,7 +3,7 @@ name: cypress and Test workflow
 
 # Trigger workflow on all pull requests
 on:
-  pull_request:
+  push:
     branches:
       - main
       - develop
