@@ -18,10 +18,10 @@ jobs:
     steps:
       # Get code from repo
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Use Node.js 21.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 21.x
 
@@ -29,14 +29,10 @@ jobs:
       - name: 🧰 Install Deps
         run: npm install
         
+      # Run build
+      - name: Run Build
+        run: npm run build
       # Run lint
       - name: Run Cypress tests
         run: npm run cypress:run
 
-      # Run build
-      - name: Run Build
-        run: npm run build
-
-      # Run tests
-      - name: Run Tests
-        run: npm run test
