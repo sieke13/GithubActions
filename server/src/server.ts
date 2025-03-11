@@ -6,7 +6,7 @@ import routes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
-const HOST = '0.0.0.0';
+const HOST = "0.0.0.0:8080";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
