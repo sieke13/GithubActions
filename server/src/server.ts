@@ -5,7 +5,7 @@ import db from './config/connection.js';
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = parseInt(process.env.PORT || '10000', 10);
+const PORT = parseInt(process.env.PORT || '1000', 10);
 const HOST = '0.0.0.0';
 
 const __filename = fileURLToPath(import.meta.url);
