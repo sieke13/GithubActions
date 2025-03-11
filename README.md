@@ -33,7 +33,11 @@ visit the webpage or my directory in github
 > https://githubactions-ombg.onrender.com/
 
 > [!IMPORTANT]
-> none
+> > <img width="1317" alt="ScreeN" src="https://github.com/sieke13/GithubActions/blob/main/githubactions1.jpg" />
+> <img width="1317" alt="ScreeN" src="https://github.com/sieke13/GithubActions/blob/main/githubactions2.jpg" />
+> <img width="1317" alt="ScreeN" src="https://github.com/sieke13/GithubActions/blob/main/githubactions3.jpg" />
+> <img width="1317" alt="ScreeN" src="https://github.com/sieke13/GithubActions/blob/main/githubactions4.jpg" />
+
 
 > [!WARNING]
 > none
