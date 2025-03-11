@@ -23,7 +23,7 @@ app.get('*', (_req, res) => {
 });
 
 db.once('open', () => {
-  app.listen( HOST, () => {
+  app.listen(PORT, HOST, () => {
     console.log(`🌍 Server running on http://${HOST}:${PORT}`);
   });
 });
