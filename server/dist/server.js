@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import db from './config/connection.js';
 import routes from './routes/index.js';
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 const HOST = '0.0.0.0';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
