@@ -7,8 +7,10 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 import apiRoutes from './api/index.js';
+import questionRoutes from './api/questionRoutes.js';
 
 router.use('/api', apiRoutes);
+router.use('/api/questions', questionRoutes);
 
 // serve up react front-end in production
 router.use((_req: Request, res: Response) => {
