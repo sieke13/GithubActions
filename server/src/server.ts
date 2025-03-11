@@ -5,8 +5,8 @@ import db from './config/connection.js';
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = parseInt(process.env.PORT || '3001', 10);
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 3001;
+//const HOST = '0.0.0.0';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,7 +23,7 @@ app.get('*', (_req, res) => {
 });
 
 db.once('open', () => {
-  app.listen(PORT, HOST, () => {
-    console.log(`🌍 Server running on http://${HOST}:${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`🌍 Server running on http://localhost:${PORT}`);
   });
 });
