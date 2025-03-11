@@ -43,4 +43,4 @@ jobs:
           npx start-server-and-test "npm run start:server" http://localhost:3001 "npx cypress run --e2e"
         env:
           CI: true
-          MONGODB_URI: mongodb://localhost:27017/techquiz
+          MONGODB_URI: mongodb+srv://sieke13:gerardo123@sieke13.3gkpd.mongodb.net/
