@@ -1,11 +1,10 @@
 
-# Cypress New1
- Test
+# Github Actions Automata
 
 ![License](https://badgen.net/badge/license/MIT/blue)
 
 ## Description
-make test for a quiz website
+based on github actions auto deploy a webpage on render
 
 ## Table of Contents
 - [Installation](#installation)
@@ -17,30 +16,30 @@ make test for a quiz website
 - [Questions](#questions)
 
 ## Installation
-1.-npm run build 2.-start the server npm run develop 3.-open a new terminal 4 .-start the fisrst test  npm test 5.-open cypress to continue testing npm test-gui
+create your github/workflow folders
 
 ## Usage
-making test
+automatize the render web deployment
 
 ## Contributing
-my teachers
+my teachers and google
 
 ## Tests
-whit cypress like in the video walkthough
+visit the webpage or my directory in github
 
 ## Notes
 
 > [!NOTE]
-> Video Walkthrough >here>>> https://www.youtube.com/watch?v=w96jHBNxn2k
+> https://githubactions-ombg.onrender.com/
 
 > [!IMPORTANT]
-> follow step by step
+> none
 
 > [!WARNING]
 > none
 
 > [!TIP]
-> none
+> take the quiz to test your knowledge
 
 ## License
 This project is licensed under the MIT license.
