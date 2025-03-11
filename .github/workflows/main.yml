@@ -36,11 +36,7 @@ jobs:
         run: npm run build
 
       - name: Start server and run Cypress E2E tests
-        run: |
-          # Ensure the server binds to 0.0.0.0 for external access
-          export HOST=0.0.0.0
-          export PORT=3001
-          npx start-server-and-test "npm run start:server" http://localhost:3001 "npx cypress run --e2e"
+        run: npx start-server-and-test "npm run start:server" http://localhost:3001 "npx cypress run --e2e"
         env:
           CI: true
-          MONGODB_URI: mongodb+srv://sieke13:gerardo123@sieke13.3gkpd.mongodb.net/
+          MONGODB_URI: mongodb://localhost:27017/techquiz
