@@ -11,9 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Kill any processes on port 3001 (if any)
-        run: |
-          lsof -t -i:3001 | xargs -r kill -9 || true
 
       - name: Deploy to Render
         run: |
